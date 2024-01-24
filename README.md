@@ -2,8 +2,8 @@
 
 ### run on app directory
 
--[ ] run command : `ng generate module <module-name>`
--[ ] run command : `ng generate component <component-name>`
+- [ ] run command : `ng generate module <module-name>`
+- [ ] run command : `ng generate component <component-name>`
 
 ## new files 
 `app-name.component.html`
