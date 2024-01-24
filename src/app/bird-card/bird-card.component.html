@@ -1,1 +1,15 @@
-<p>bird-card works!</p>
+
+<div class="title bird-name">
+  {{card.birdName}} - {{name}}
+</div>
+<div class="image">
+  <img [src]="card.url" alt=""
+       (click)="onImageClicked($event)">
+</div>
+<div class="area" (click)="onAreaClick('Mishael')">
+ <> {{card.area}}
+</div>
+<div class="population">
+  {{card.population}}
+</div>
+

@@ -22,7 +22,8 @@ import {Component} from "@angular/core";
           <td>yonatane-square.io</td>
         </tr>
         </tbody>
-      </table>`,
+      </table>
+  `,
   styles:[`
     table {
       thead {
