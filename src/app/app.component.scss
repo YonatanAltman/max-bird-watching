@@ -1,0 +1,24 @@
+:host {
+  display: block;
+  background-color: rgba(203, 255, 0, 0.55);
+
+  .btn {
+    background: red;
+    font-size: x-large;
+
+    &.show {
+      background: green;
+    }
+
+    &.hide {
+      background: black;
+      color: white;
+    }
+  }
+
+  ul {
+    cursor: pointer;
+  }
+
+
+}

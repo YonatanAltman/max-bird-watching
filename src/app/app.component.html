@@ -1,5 +1,17 @@
 <h1>This is my app</h1>
-
+<div>{{state}}</div>
+<button class="btn btn-toggle {{state}}"
+        (click)="toggleState()">Toggle State
+</button>
+<ul *ngIf="state === 'show'" class="my-list">
+  <li *ngFor="let item of items"
+      [routerLink]="item.link">
+    {{linkPreFix}}{{item.label}}
+  </li>
+</ul>
+<div>
+  <button class="btn">Some Button</button>
+</div>
 <router-outlet></router-outlet>
 
 
