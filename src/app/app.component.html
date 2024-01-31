@@ -1,24 +1,24 @@
-<h1>This is my app</h1>
-<div>{{state}}</div>
-<button class="btn btn-toggle {{state}}"
-        (click)="toggleState()">Toggle State
-</button>
-<ul *ngIf="state === 'show'" class="my-list">
-  <li *ngFor="let item of items"
-      [routerLink]="item.link">
-    {{linkPreFix}}{{item.label}}
-  </li>
-</ul>
-<div>
-  <button class="btn">Some Button</button>
-</div>
+<app-header [items]="items"
+            (stateChanged)="onStateChanged('first',$event)"
+></app-header>
+<app-header
+  [items]="items2"
+  [title]="title2"
+  (stateChanged)="onStateChanged('second',$event)"
+></app-header>
+<app-header
+  [items]="items2"
+  [title]="title2"
+  (stateChanged)="onStateChanged('third',$event)"
+></app-header>
+
 <router-outlet></router-outlet>
 
 
-<ui-button></ui-button>
-<app-table-info></app-table-info>
-<ui-button></ui-button>
-<app-bird-card></app-bird-card>
+<!--<ui-button></ui-button>-->
+<!--<app-table-info></app-table-info>-->
+<!--<ui-button></ui-button>-->
+<!--<app-bird-card></app-bird-card>-->
 <footer>
   this is footer
 </footer>

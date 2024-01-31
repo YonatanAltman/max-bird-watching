@@ -1,41 +1,44 @@
 import {Component} from '@angular/core';
-import {CommonModule, NgIf} from '@angular/common';
+import {NgIf} from '@angular/common';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import {TableModule} from "./table/table.module";
 import {ButtonModule} from "./button/button.module";
 import {BirdCardModule} from "./bird-card/bird-card.module";
 import {AboutModule} from "./about/about.module";
+import {HeaderComponent} from "./header/header.component";
+import {AppLink, HeaderState} from "./header/header.interface";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, TableModule, ButtonModule, BirdCardModule, NgIf,
-    AboutModule, RouterLink
+  imports: [
+    RouterOutlet, TableModule, ButtonModule, BirdCardModule, NgIf,
+    AboutModule, RouterLink, HeaderComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 
 })
 export class AppComponent {
-  state: 'show' | 'hide' = 'hide';
   title = 'bird-project';
-  linkPreFix = 'Go to:';
-  items = [
+
+  items: AppLink[] = [
     {link: 'home', label: 'Home'},
     {link: 'about', label: 'About'},
-    {link: 'reports', label: 'Yonatan'},
+    {link: 'report', label: 'Yonatan'},
     {link: '404', label: '404'},
   ]
+  items2: AppLink[] = [
+    {link: 'golan', label: 'Riki'},
+    {link: 'home', label: 'Golan'},
+    {link: 'report', label: 'Yuri'},
+    {link: 'about', label: 'David'},
 
+  ]
 
-  toggleState() {
-    // if(this.state === 'show'){
-    //   this.state = 'hide';
-    // }else {
-    //   this.state = 'show';
-    // }
+  title2 = 'Yonatan';
 
-    this.state =
-      this.state === 'show' ? 'hide' : 'show';
+  onStateChanged(component: string, $event: HeaderState) {
+    console.log(component, $event);
   }
 }

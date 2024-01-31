@@ -1,0 +1,52 @@
+:host {
+  display: grid;
+  background-color: darkblue;
+  color: white;
+  grid-template-columns: 1fr 100px;
+  //grid-template-columns: 1fr 1fr 1fr;
+  .first {
+    display: grid;
+    place-content: center start;
+    grid-template-columns:auto auto;
+    column-gap: 30px;
+  }
+
+  .navs {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+
+    .nav {
+      font-weight: 100;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 5px 10px;
+      &:hover{
+        background-color: white;
+        color: brown;
+
+      }
+      &.active{
+        border-bottom: solid white 2px;
+      }
+    }
+  }
+
+  .btn {
+    background: red;
+    font-size: x-large;
+
+    &.show {
+      background: green;
+    }
+
+    &.hide {
+      background: black;
+      color: white;
+    }
+  }
+
+  ul {
+    cursor: pointer;
+  }
+}

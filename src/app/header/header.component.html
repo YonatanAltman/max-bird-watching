@@ -1,0 +1,27 @@
+<div class="first">
+
+  <div>
+    <button class="btn btn-toggle {{state}}"
+            (click)="toggleState()">{{title}}
+    </button>
+  </div>
+
+  <div *ngIf="state === 'show'" class="my-list navs">
+    <!--  <li *ngFor="let item of items"-->
+    <!--      [routerLink]="item.link">-->
+    <!--    {{linkPreFix}}{{item.label}}-->
+    <!--  </li>-->
+
+    <div
+      class="nav"
+      routerLinkActive="active"
+      *ngFor="let item of items"
+      [routerLink]="item.link">
+      {{linkPreFix}}{{item.label}}
+    </div>
+  </div>
+
+</div>
+<div>
+  <button class="btn">Some Button</button>
+</div>
